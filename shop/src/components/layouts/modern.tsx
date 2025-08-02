@@ -1,6 +1,6 @@
 import Banner from '@/components/banners/banner';
 import Categories from '@/components/categories/categories';
-import { Element } from 'react-scroll';
+const Element: React.FC<any> = require('react-scroll').Element;
 import ProductGridHome from '@/components/products/grids/home';
 import FilterBar from './filter-bar';
 import type { HomePageProps } from '@/types';
