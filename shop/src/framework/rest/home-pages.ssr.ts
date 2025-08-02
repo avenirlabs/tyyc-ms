@@ -25,6 +25,10 @@ type ParsedQueryParams = {
 };
 
 // This function gets called at build time
+
+
+
+
 export const getStaticPaths: GetStaticPaths<ParsedQueryParams> = async ({
   locales,
 }) => {
