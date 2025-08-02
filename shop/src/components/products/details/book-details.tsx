@@ -7,7 +7,7 @@ import isEqual from 'lodash/isEqual';
 import isEmpty from 'lodash/isEmpty';
 import Truncate from '@/components/ui/truncate';
 import { scroller } from 'react-scroll';
-const Element: React.FC<any> = require('react-scroll').Element;
+import { Element as ScrollElement } from 'react-scroll';
 import VariationPrice from './variation-price';
 import { Routes } from '@/config/routes';
 import type { Product } from '@/types';
@@ -285,7 +285,7 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
         </div>
       </div>
 
-      <Element name="details" className="pt-5 lg:pt-14">
+      <ScrollElement name="details" className="pt-5 lg:pt-14">
         <h2 className="mb-4 text-xl font-bold tracking-tight text-heading md:mb-6 lg:text-3xl">
           {t('text-details')}
         </h2>
@@ -336,7 +336,7 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
             </p>
           )}
         </div>
-      </Element>
+      </ScrollElement>
     </article>
   );
 };
