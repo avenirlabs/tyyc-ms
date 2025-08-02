@@ -36,14 +36,15 @@ export const getStaticPaths: GetStaticPaths<ParsedQueryParams> = async ({
   per_page: 100,
 });
 
-
-
-  const paths = categoryData?.flatMap?.((type) =>
-  locales?.map((locale) => ({ params: { pages: [type.slug] }, locale }))
+const paths = categoryData.flatMap((type) =>
+  locales?.map((locale) => ({
+    params: { pages: [type.slug] },
+    locale,
+  }))
 );
 
 
-
+ 
   // We'll pre-render only these paths at build time also with the slash route.
   return {
     paths: paths.concat(
