@@ -12,7 +12,7 @@ export default function ClassicLayout({ variables }: HomePageProps) {
       <Banner layout="classic" variables={variables.types} />
       <PromotionSliders variables={variables.types} />
       <FilterBar variables={variables.categories} />
-      <Element
+      <ScrollElement
         name="grid"
         className="flex border-t border-solid border-border-200 border-opacity-70"
       >
@@ -21,7 +21,9 @@ export default function ClassicLayout({ variables }: HomePageProps) {
           className="px-4 pt-3.5 pb-16 lg:p-6 xl:p-8"
           variables={variables.products}
         />
-      </Element>
+      </ScrollElement>
+     
+
     </>
   );
 }
