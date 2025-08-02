@@ -13,7 +13,7 @@ import { dehydrate } from 'react-query/hydration';
 import invariant from 'tiny-invariant';
 import client from './client';
 import { API_ENDPOINTS } from './client/api-endpoints';
-import { HttpClient } from '@/framework/rest/client/http-client';
+import { HttpClient } from './client/http-client';
 import {
   CATEGORIES_PER_PAGE,
   PRODUCTS_PER_PAGE,
