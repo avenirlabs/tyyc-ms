@@ -12,8 +12,9 @@
     "build:gql": "yarn codegen && next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild:rest": "next-sitemap",
-    "prepare": "husky install"
+    "postbuild:rest": "next-sitemap"
+   /* ,
+    "prepare": "husky install" */
   },
   "dependencies": {
     "@apollo/client": "3.11.8",
