@@ -1,6 +1,7 @@
 import { RefundPolicy, TermsAndConditions } from '@/types';
 import rangeMap from '@/lib/range-map';
-import { Link as AnchorLink, Element } from 'react-scroll';
+const AnchorLink: React.FC<any> = require('react-scroll').Link;
+const ScrollElement: React.FC<any> = require('react-scroll').Element;
 import TermsListLoader from '@/components/ui/loaders/terms-list-loader';
 import TermsLoader from '@/components/ui/loaders/terms-loader';
 import { useTranslation } from 'next-i18next';
@@ -73,7 +74,7 @@ export const TermsItems = ({
     description: item?.description as string,
   });
   return (
-    <Element
+    <ScrollElement
       key={item?.title}
       name={makeTitleToDOMId(item?.title)}
       className="mb-7 md:mb-10"
@@ -91,7 +92,7 @@ export const TermsItems = ({
       ) : (
         ''
       )}
-    </Element>
+    </ScrollElement>
   );
 };
 
