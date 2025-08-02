@@ -7,7 +7,7 @@ import isEqual from 'lodash/isEqual';
 import isEmpty from 'lodash/isEmpty';
 import Truncate from '@/components/ui/truncate';
 import { scroller } from 'react-scroll';
-import { Element as ScrollElement } from 'react-scroll';
+const ScrollElement: React.FC<any> = require('react-scroll').Element;
 import VariationPrice from './variation-price';
 import { Routes } from '@/config/routes';
 import type { Product } from '@/types';
