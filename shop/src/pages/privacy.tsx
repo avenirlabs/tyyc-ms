@@ -1,5 +1,6 @@
 import { privacyPolicy } from '@/framework/static/privacy';
-import { Link, Element } from 'react-scroll';
+const ScrollLink: React.FC<any> = require('react-scroll').Link;
+const ScrollElement: React.FC<any> = require('react-scroll').Element;
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { GetStaticProps } from 'next';
@@ -33,7 +34,7 @@ export default function PrivacyPage() {
             <ol className="sticky z-10 md:top-16 lg:top-22">
               {content?.map((item) => (
                 <li key={item.title}>
-                  <Link
+                  <ScrollLink
                     spy={true}
                     offset={-120}
                     smooth={true}
@@ -43,7 +44,7 @@ export default function PrivacyPage() {
                     className="inline-flex cursor-pointer py-3 uppercase text-sub-heading"
                   >
                     {t(item.title)}
-                  </Link>
+                  </ScrollLink>
                 </li>
               ))}
             </ol>
@@ -52,7 +53,7 @@ export default function PrivacyPage() {
 
           <div className="md:w-9/12 md:pb-10 ltr:md:pl-8 rtl:md:pr-8">
             {content?.map((item) => (
-              <Element
+              <ScrollElement
                 key={item.title}
                 name={makeTitleToDOMId(item.title)}
                 className="mb-10"
@@ -64,7 +65,7 @@ export default function PrivacyPage() {
                   className="leading-loose text-body-dark"
                   dangerouslySetInnerHTML={{ __html: t(item.description) }}
                 />
-              </Element>
+              </ScrollElement>
             ))}
           </div>
           {/* End of content */}
