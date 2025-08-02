@@ -18,7 +18,8 @@ import { useTranslation } from 'next-i18next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Element, scroller } from 'react-scroll';
+import { scroller } from 'react-scroll';
+const ScrollElement: React.FC<any> = require('react-scroll').Element;
 import { useIntersection } from 'react-use';
 import { useAttributes } from './attributes.context';
 import CategoryBadges from './category-badges';
@@ -300,7 +301,7 @@ const Details: React.FC<Props> = ({
         </div>
       </div>
 
-      <Element
+      <ScrollElement
         name="details"
         className="border-b border-border-200 border-opacity-70 px-5 py-4 lg:px-16 lg:py-14"
       >
@@ -317,7 +318,7 @@ const Details: React.FC<Props> = ({
         ) : (
           ''
         )}
-      </Element>
+      </ScrollElement>
     </article>
   );
 };
