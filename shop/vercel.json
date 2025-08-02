@@ -1,12 +1,2 @@
 {
-  "env": {
-    "NEXT_PUBLIC_REST_API_ENDPOINT": "https://theyayacafe.com/wp-json/wc/v3", // <- your actual REST API
-    ...
-  },
-  "build": {
-    "env": {
-      "NEXT_PUBLIC_REST_API_ENDPOINT": "https://theyayacafe.com/graphql",
-      ...
-    }
-  }
 }
