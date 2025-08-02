@@ -23,7 +23,11 @@ import {
 type ParsedQueryParams = {
   pages: string[];
 };
-
+interface Category {
+  id: number;
+  slug: string;
+  // Add any other properties you need
+}
 // This function gets called at build time
 
 
@@ -35,10 +39,11 @@ export const getStaticPaths: GetStaticPaths<ParsedQueryParams> = async ({
   invariant(locales, 'locales is not defined');
   
  
-  const categoryData = await HttpClient.get('/products/categories', {
+ const categoryData = await HttpClient.get<Category[]>('/products/categories', {
   parent: 0,
   per_page: 100,
 });
+
 
 const paths = categoryData.flatMap((type) =>
   locales?.map((locale) => ({
