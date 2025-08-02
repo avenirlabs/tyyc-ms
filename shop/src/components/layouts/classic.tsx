@@ -1,7 +1,7 @@
 import Banner from '@/components/banners/banner';
 import PromotionSliders from '@/components/promotions/promotions';
 import Categories from '@/components/categories/categories';
-import { Element as ScrollElement } from 'react-scroll';
+const ScrollElement: React.FC<any> = require('react-scroll').Element;
 import FilterBar from './filter-bar';
 import ProductGridHome from '@/components/products/grids/home';
 import type { HomePageProps } from '@/types';
