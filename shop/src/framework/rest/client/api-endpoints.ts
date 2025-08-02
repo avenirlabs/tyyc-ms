@@ -6,7 +6,7 @@ export const API_ENDPOINTS = {
   PRODUCTS_QUESTIONS: '/questions',
   FEEDBACK: '/feedbacks',
   CATEGORIES: '/categories',
-  TYPES: '/types',
+  TYPES: '/products/categories',
   TAGS: '/tags',
   SHOPS: '/shops',
   AUTHORS: '/authors',
