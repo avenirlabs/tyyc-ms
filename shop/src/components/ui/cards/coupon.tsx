@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { Image } from '@/components/ui/image';
 import cn from 'classnames';
-import CopyToClipboard from 'react-copy-to-clipboard';
+const CopyToClipboard: React.FC<any> = require('react-copy-to-clipboard').CopyToClipboard;
 import { useTranslation } from 'next-i18next';
 import { couponPlaceholder } from '@/lib/placeholders';
 import { Coupon } from '@/types';
