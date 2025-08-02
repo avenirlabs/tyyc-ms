@@ -29,7 +29,11 @@ export const getStaticPaths: GetStaticPaths<ParsedQueryParams> = async ({
 }) => {
   invariant(locales, 'locales is not defined');
   
-const data = await client.categories.all({ limit: 100, parent: '0' });
+  const data = await HttpClient.get('/products/categories', {
+  parent: 0,
+  per_page: 100,
+});
+
   const paths = data?.data?.flatMap?.((type) =>
   locales?.map((locale) => ({ params: { pages: [type.slug] }, locale }))
 );
