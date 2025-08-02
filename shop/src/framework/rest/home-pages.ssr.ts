@@ -30,16 +30,18 @@ export const getStaticPaths: GetStaticPaths<ParsedQueryParams> = async ({
 }) => {
   invariant(locales, 'locales is not defined');
   
-  const data = await HttpClient.get('/products/categories', {
+ 
+  const categoryData = await HttpClient.get('/products/categories', {
   parent: 0,
   per_page: 100,
 });
 
-type TypeItem = { slug: string };
-const data: TypeItem[] = await HttpClient.get('/products/categories', {
-  parent: 0,
-  per_page: 100,
-});
+
+
+  const paths = categoryData?.flatMap?.((type) =>
+  locales?.map((locale) => ({ params: { pages: [type.slug] }, locale }))
+);
+
 
 
   // We'll pre-render only these paths at build time also with the slash route.
